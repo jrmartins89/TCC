@@ -27,7 +27,7 @@ app.use(                                                // helps to store the se
 
 // db config.
 db.mongoose
-    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+    .connect(`mongodb+srv://jribamarjunior89:Thepillows1@vagouaqui.rt4976f.mongodb.net/`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -40,7 +40,41 @@ db.mongoose
         process.exit();
     });
 
+function initial() {
+    Role.estimatedDocumentCount((err, count) => {
+        if (!err && count === 0) {
+            new Role({
+                name: "user"
+            }).save(err => {
+                if (err) {
+                    console.log("error", err);
+                }
 
+                console.log("added 'user' to roles collection");
+            });
+
+            new Role({
+                name: "moderator"
+            }).save(err => {
+                if (err) {
+                    console.log("error", err);
+                }
+
+                console.log("added 'moderator' to roles collection");
+            });
+
+            new Role({
+                name: "admin"
+            }).save(err => {
+                if (err) {
+                    console.log("error", err);
+                }
+
+                console.log("added 'admin' to roles collection");
+            });
+        }
+    });
+}
 //routes
 app.get("/", (req, res) => {
     res.json({ message: "Bem vindo ao aplicativo VagouAqui." });

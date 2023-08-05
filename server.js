@@ -23,6 +23,23 @@ app.use(                                                // helps to store the se
     })
 );
 
+
+// db config.
+db.mongoose
+    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => {
+        console.log("Successfully connect to MongoDB.");
+        initial();
+    })
+    .catch(err => {
+        console.error("Connection error", err);
+        process.exit();
+    });
+
+
 // simple route
 app.get("/", (req, res) => {
     res.json({ message: "Bem vindo ao aplicativo VagouAqui." });

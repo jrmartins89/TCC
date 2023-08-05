@@ -23,7 +23,7 @@ app.use(                                                // helps to store the se
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Bem vindo ao aplicaivo VagouAqui." });
+    res.json({ message: "Bem vindo ao aplicativo VagouAqui." });
 });
 
 

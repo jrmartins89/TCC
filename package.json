@@ -1,0 +1,30 @@
+{
+  "name": "vagouaqui",
+  "version": "1.0.0",
+  "description": "package containing all the necessary modules do deploy the application 'VagouAqui', which is the final term project for jose ribamar jr",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmartins89/TCC.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "jwt",
+    "login",
+    "registration",
+    "authentication",
+    "authorization",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Jose Ribamar Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrmartins89/TCC/issues"
+  },
+  "homepage": "https://github.com/jrmartins89/TCC#readme"
+}

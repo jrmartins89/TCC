@@ -26,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/jrmartins89/TCC/issues"
   },
-  "homepage": "https://github.com/jrmartins89/TCC#readme"
+  "homepage": "https://github.com/jrmartins89/TCC#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.2"
+  }
 }

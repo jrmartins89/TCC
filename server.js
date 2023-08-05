@@ -18,3 +18,9 @@ app.use(                                                // helps to store the se
         httpOnly: true
     })
 );
+
+// simple route
+app.get("/", (req, res) => {
+    res.json({ message: "Bem vindo ao aplicaivo VagouAqui." });
+});
+

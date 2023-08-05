@@ -26,3 +26,8 @@ app.get("/", (req, res) => {
     res.json({ message: "Bem vindo ao aplicaivo VagouAqui." });
 });
 
+
+// set port, listen for requests
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+});

@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const app = express();
+const PORT = process.env.PORT || 8080;
+
 
 var corsOptions = {
     origin: "http://localhost:8081"

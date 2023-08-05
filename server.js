@@ -41,11 +41,12 @@ db.mongoose
     });
 
 
-// simple route
+//routes
 app.get("/", (req, res) => {
     res.json({ message: "Bem vindo ao aplicativo VagouAqui." });
 });
-
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 // set port, listen for requests
 app.listen(PORT, () => {

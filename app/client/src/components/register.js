@@ -70,3 +70,21 @@ const Register = () => {
         const password = e.target.value;
         setPassword(password);
     };
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+
+        setSuccessful(false);
+
+        form.current.validateAll();
+
+        if (checkBtn.current.context._errors.length === 0) {
+            dispatch(register(username, email, password))
+                .then(() => {
+                    setSuccessful(true);
+                })
+                .catch(() => {
+                    setSuccessful(false);
+                });
+        }
+    };

@@ -65,3 +65,8 @@ const Register = () => {
         const email = e.target.value;
         setEmail(email);
     };
+
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };

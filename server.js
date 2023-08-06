@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-const db = require("./app/models");
-const dbConfig = require("./app/config/ db.config");
+const db = require("./app/server/models");
+const dbConfig = require("./app/server/config/ db.config");
 const Role = db.role;
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -79,8 +79,8 @@ function initial() {
 app.get("/", (req, res) => {
     res.json({ message: "Bem vindo ao aplicativo VagouAqui." });
 });
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
+require('./app/server/routes/auth.routes')(app);
+require('./app/server/routes/user.routes')(app);
 
 // set port, listen for requests
 app.listen(PORT, () => {

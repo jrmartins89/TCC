@@ -26,3 +26,13 @@ const Login = (props) => {
     const { isLoggedIn } = useSelector(state => state.auth);
     const { message } = useSelector(state => state.message);
     const dispatch = useDispatch();
+
+    const onChangeUsername = (e) => {
+        const username = e.target.value;
+        setUsername(username);
+    };
+
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };

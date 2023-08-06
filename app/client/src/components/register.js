@@ -60,3 +60,8 @@ const Register = () => {
         const username = e.target.value;
         setUsername(username);
     };
+
+    const onChangeEmail = (e) => {
+        const email = e.target.value;
+        setEmail(email);
+    };

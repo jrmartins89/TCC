@@ -28,6 +28,17 @@ const App = () => {
     const logOut = useCallback(() => {
         dispatch(logout());
     }, [dispatch]);
+
+    useEffect(() => {
+        if (currentUser) {
+            setShowModeratorBoard(currentUser.roles.includes("ROLE_MODERATOR"));
+            setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
+        } else {
+            setShowModeratorBoard(false);
+            setShowAdminBoard(false);
+        }
+    }, [currentUser]);
+
 }
 
 export default App;

@@ -55,3 +55,8 @@ const Register = () => {
     const [successful, setSuccessful] = useState(false);
     const { message } = useSelector(state => state.message);
     const dispatch = useDispatch();
+
+    const onChangeUsername = (e) => {
+        const username = e.target.value;
+        setUsername(username);
+    };

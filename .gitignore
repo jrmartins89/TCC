@@ -1,2 +1,6 @@
 /.idea/modules.xml
 /.idea/VagouAqui2.iml
+/.idea/vcs.xml
+/.idea/git_toolbox_prj.xml
+/node_modules/
+/package-lock.json

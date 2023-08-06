@@ -121,7 +121,7 @@ const App = () => {
                     <Route path="/admin" element={<BoardAdmin />} />
                 </Routes>
             </div>
-
+            <AuthVerify logOut={logOut}/>
         </div>
     );
 };

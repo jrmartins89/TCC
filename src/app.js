@@ -8,15 +8,19 @@ import Register from "./components/register";
 import Home from "./components/home";
 import Profile from "./components/profile";
 import BoardUser from "./components/boarduser";
-import AuthVerify from "./common/AuthVerify";
 import BoardModerator from "./components/boardmoderator";
 import BoardAdmin from "./components/boardadmin";
+import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
+import AuthVerify from "./common/AuthVerify";
+import EventBus from "./common/EventBus";
 const App = () => {
     const [showModeratorBoard, setShowModeratorBoard] = useState(false);
     const [showAdminBoard, setShowAdminBoard] = useState(false);
+
     const { user: currentUser } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
+
     let location = useLocation();
 
     useEffect(() => {
@@ -37,7 +41,16 @@ const App = () => {
             setShowModeratorBoard(false);
             setShowAdminBoard(false);
         }
-    }, [currentUser]);
+
+        EventBus.on("logout", () => {
+            logOut();
+        });
+
+        return () => {
+            EventBus.remove("logout");
+        };
+    }, [currentUser, logOut]);
+
     return (
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">

@@ -13,7 +13,6 @@ import { history } from "./helpers/history";
 import AuthVerify from "./common/AuthVerify";
 import BoardModerator from "./components/boardmoderator";
 import BoardAdmin from "./components/boardadmin";
-import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 const App = () => {
     const [showModeratorBoard, setShowModeratorBoard] = useState(false);

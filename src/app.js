@@ -8,8 +8,6 @@ import Register from "./components/register";
 import Home from "./components/home";
 import Profile from "./components/profile";
 import BoardUser from "./components/boarduser";
-import { logout } from "./actions/auth";
-import { history } from "./helpers/history";
 import AuthVerify from "./common/AuthVerify";
 import BoardModerator from "./components/boardmoderator";
 import BoardAdmin from "./components/boardadmin";
